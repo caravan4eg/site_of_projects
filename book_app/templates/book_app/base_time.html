@@ -1,0 +1,16 @@
+{% extends 'site_app/base.html' %}
+<title>{% block title %}{% endblock %}</title>
+
+<body>
+
+{% block content %} {% endblock %}
+
+{% block footer %}
+    <p>Ставьте лайки, подписывайтесь на наш канал! :-).</p>
+    <hr>
+    {% include 'book_app/includes/bottom_template.html' %}
+{% endblock %}
+
+</body>
+</html>
+

@@ -1,0 +1,16 @@
+{% extends 'site_app/base.html' %}
+
+<title>{% block title %}Current time{% endblock title %}</title>
+
+{% block content %}
+    <h1 class="display-4">What time is it now?</h1>
+    <hr>
+    <p>
+        This page implements <b>datetime.datetime.now()</b> -
+        Python function, wich gives us current date & time.
+        You see the result of its work.
+    </p>
+    <hr>
+    <p><h2> {{ current_time }} </h2> </p>
+    <hr>
+{% endblock content %}

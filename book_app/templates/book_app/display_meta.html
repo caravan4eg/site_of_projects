@@ -1,0 +1,27 @@
+{% extends 'site_app/base.html' %}
+from django.http import Http404
+{% block title %} META REQUEST{% endblock title %}
+
+{% block content %}
+    <h1 class="display-4">What is inside META REQUEST: </h1>
+    <hr>
+    <p>When you are surfing through the internet your computer or smartphone
+        interact with many servers. What data sends your computer to other?
+        Here is some of it:</p>
+    <hr>
+    <br>
+    <table>
+        {% for key, value in values_meta %}
+            <tr>
+                <td>{{ key }} </td>
+                <td>
+                {{ value }}</tr></td>
+        {% endfor %}
+    </table>
+    <br>
+    <hr>
+    <p>Атрибут request.path: {{ path }}</p>
+    <p>Атрибут request.COOKIES: {{ cook }}</p>
+
+{% endblock %}
+

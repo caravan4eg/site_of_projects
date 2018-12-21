@@ -1,0 +1,35 @@
+{% extends 'site_app/base.html' %}
+{% block title %}Извещение о заказе{% endblock title %}
+
+{% block content %}
+    <h1 class="display-4">Order Notification</h1>
+    <hr>
+    <p>
+        Here Python function prepears date and transfers it
+        to the template trough dictionary and with help of
+        Django Template Language (looks like Jinja ;-) shows it to us.
+    </p>
+    <hr>
+    <p>Dear {{ persone_name|upper }}!</p>
+    <p>Thank you for your order at {{ company|upper }}.
+        It will be delivered to you: {{ ship_date|date:"j/F/Y" }}.</p>
+
+    <p>Here is your goods:</p>
+    <ul>
+        {% for item in item_list %}
+            <li>{{ forloop.counter }}-> {{ item|upper }}</li>
+        {% empty %}
+            <p>Nothing is ordered!!!</p>
+        {% endfor %}
+        {#    <p>Заказано {{ counter }} наименования. </p>#}
+    </ul>
+
+    {% if ordered_warranty %}
+        <p>Warranty information inside.</p>
+    {% else %}
+        <p>You did not order warranty!</p>
+    {% endif %}
+
+    <p>With best regards, <br/> {{ company|upper }}</p>
+
+{% endblock content %}
