@@ -1,5 +1,6 @@
 from django.urls import path, include
 from . views import *
+from django.contrib.auth import urls
 
 app_name = 'catalog'
 
@@ -10,5 +11,6 @@ urlpatterns = [
     path('book/<int:pk>', BookDetailView.as_view(), name='book-detail'),
     path('authors/', AuthorListView.as_view(), name='authors'),
     path('author/<int:pk>', AuthorDetailView.as_view(), name='author-detail'),
-    path('accounts/', include('django.contrib.auth.urls')),
+    path('mybooks/', LoanedBooksByUserListView.as_view(), name='my-borrowed'),
+
     ]

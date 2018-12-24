@@ -12,7 +12,8 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-    <img src="http://icons.iconarchive.com/icons/papirus-team/papirus-apps/256/python-icon.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    <img src="http://icons.iconarchive.com/icons/papirus-team/papirus-apps/256/python-icon.png" width="30" height="30"
+         class="d-inline-block align-top" alt="">
     <a class="navbar-brand" href="{% url 'site_app:home' %}">Home</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +40,7 @@
                     <a class="dropdown-item" href="{% url 'blog:post_list' %}">Blogs posts</a>
                     <a class="dropdown-item" href="{% url 'blog:post_new' %}">New post</a>
                 </div>
-                </li>
+            </li>
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -82,10 +83,10 @@
                     <a class="dropdown-item" href="{% url 'book_app:search' %}">Search</a>
                 </div>
             </li>
-                <!--</li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" href="#">Disabled</a>
-                </li>-->
+            <!--</li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>-->
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -96,28 +97,39 @@
 <div class="content container">
     <div class="row">
         <div class="col-md-8">
-        <div style="margin-left:20px;margin-top:20px">
-            {% block content %}
-            {% endblock %}
-
+            <div style="margin-left:20px;margin-top:20px">
+                {% block content %}
+                {% endblock %}
+                {#it should be there #}
+                {#Open the base template (/locallibrary/catalog/templates/base_generic.html)#}
+                {#and copy the following text into the sidebar block, immediately before #}
+                {#the endblock template tag.#}
+                <p><em>Authentication block: </em></p>
+                {% if user.is_authenticated %}
+                    <li>User: {{ user.get_username }}</li>
+                    <li><a href="{% url 'logout' %}?next={{ request.path }}">Logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}?next={{ request.path }}">Login</a></li>
+                {% endif %}
+{#end of Authentication block           #}
+            </div>
         </div>
     </div>
-</div>
-<p>
+    <p>
 
-</p>
-<div class="container">
+    </p>
+    <div class="container">
 
 
-    <p><i>&copy; caravan4eg 2018</i></p>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-            crossorigin="anonymous"></script>
+        <p><i>&copy; caravan4eg 2018</i></p>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+                integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+                crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+                integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+                crossorigin="anonymous"></script>
 </body>
 </html>

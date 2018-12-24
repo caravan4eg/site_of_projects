@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from catalog.models import Book, Author, BookInstance, Genre
 from django.views import generic
+# to restrict access to info about loan book
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 # Create your views here.
@@ -73,3 +75,20 @@ class AuthorListView(generic.ListView):
 class AuthorDetailView(generic.DetailView):
 	model = Author
 	paginate_by = 2
+
+
+class LoanedBooksByUserListView(LoginRequiredMixin, generic.ListView):
+	"""Generic class-based view listing books on loan to current user."""
+	model = BookInstance
+	template_name = 'catalog/bookinstance_list_borrowed_user.html'
+	paginate_by = 10
+
+	def get_queryset(self):
+		'''
+		In order to restrict our query to just the BookInstance
+		objects for the current user, we re-implement get_queryset()
+		as shown above. Note that "o" is the stored code for "on loan"
+		and we order by the due_back date so that the oldest
+		items are displayed first.
+		'''
+		return BookInstance.objects.filter(borrower=self.request.user).filter(status__exact='o').order_by('due_back')

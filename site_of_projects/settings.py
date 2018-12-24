@@ -64,7 +64,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-                # os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'templates')
         ],
         'APP_DIRS': True,
 
@@ -156,3 +156,11 @@ STATICFILES_DIRS = (
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
 LOGIN_REDIRECT_URL = '/'
+'''
+The password reset system requires that your website 
+supports email, which is beyond the scope of this article, 
+so this part won't work yet. To allow testing, put the following 
+line at the end of your settings.py file. This logs any emails sent to 
+the console (so you can copy the password reset link from the console).
+'''
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

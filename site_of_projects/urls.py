@@ -25,4 +25,26 @@ urlpatterns = [
     path('catalog/', include('catalog.urls')),
     path('shop/', include('shop.urls')),
     url(r'^oauth/', include('social_django.urls', namespace='social')),
+    path('accounts/', include('django.contrib.auth.urls')),
     ]
+
+
+# Add Django site authentication urls (for login, logout, password management)
+# urlpatterns += [
+#     path('accounts/', include('django.contrib.auth.urls')),
+# ]
+'''
+Using the above method adds the following URLs with names in square 
+brackets, which can be used to reverse the URL mappings. You don't 
+have to implement anything else — the above URL mapping automatically 
+maps the below mentioned URLs.
+
+accounts/ login/ [name='login']
+accounts/ logout/ [name='logout']
+accounts/ password_change/ [name='password_change']
+accounts/ password_change/done/ [name='password_change_done']
+accounts/ password_reset/ [name='password_reset']
+accounts/ password_reset/done/ [name='password_reset_done']
+accounts/ reset/<uidb64>/<token>/ [name='password_reset_confirm']
+accounts/ reset/done/ [name='password_reset_complete']
+    '''

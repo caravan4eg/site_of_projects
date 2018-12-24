@@ -9,7 +9,7 @@
             </div>
             <h1><a href="{% url 'blog:post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
             <hr>
-            <p>{{ post.text|linebreaksbr|safe|truncatewords:40 }}</p>
+            <p>{{ post.text|linebreaksbr|safe|truncatewords:55 }}</p>
         </div>
     {% endfor %}
 {% endblock %}
