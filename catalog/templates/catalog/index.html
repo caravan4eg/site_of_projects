@@ -1,0 +1,36 @@
+{% extends "catalog/base_generic.html" %}
+{% load static %}
+{% block title %}Local Library Home {% endblock %}
+{% block content %}
+
+    <h1 class="display-5">Local Library Home</h1>
+    <p>Welcome to LocalLibrary, a website developed by<em> caravan4eg with help of Mozilla Developer Network</em>!</p>
+    <p>Most of content is <em>dynamically generated from data base</em>.
+        <em>Generic class-based views</em> are implemented here too.</p>
+    <hr>
+    <h2>Dynamic content</h2>
+    <p>This site interacts with data base of books witch belong to the LocalLibrary.
+        At current time the LocalLibrary has the following record counts:</p>
+    <ul>
+        <li><strong>Books:</strong> {{ num_books }}</li>
+        <li><strong>Copies:</strong> {{ num_instances }}</li>
+        <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
+        <li><strong>Authors:</strong> {{ num_authors }}</li>
+        {# Added by me - study case #}
+        Including:
+        <li><strong>Books about Dark Tower:</strong> {{ num_books_darktower }}</li>
+        <li><strong>Science Fiction books :</strong> {{ num_genres_fiction }}</li>
+    </ul>
+    <hr>
+    <p>Django stores history of visits to particular pages and sessions.
+        It knows how much time you have visited this page.<br>
+        <em><b>You have visited this page
+            {{ num_visits }}{% if num_visits == 1 %} time{% else %} times{% endif %}.</em></b></p>
+    <img src="{% static 'images/the_dark_tower.jpg' %}" alt="The Dark Tower" style="width:940px;height:515px;">
+{% endblock %}
+
+
+
+
+
+

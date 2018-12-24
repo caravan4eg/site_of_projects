@@ -15,10 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls import url
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', include('site_app.urls')),
+    path('admin/', admin.site.urls),
     path('book_app/', include('book_app.urls')),
     path('blog/', include('blog.urls')),
+    path('catalog/', include('catalog.urls')),
+    path('shop/', include('shop.urls')),
+    url(r'^oauth/', include('social_django.urls', namespace='social')),
     ]
