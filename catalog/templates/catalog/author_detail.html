@@ -3,7 +3,7 @@
 {% block content %}
     <h1 class="display-5">Author: {{ author.last_name }} {{ author.first_name }}</h1>
     <div style="margin-left:20px;margin-top:20px">
-        <h4>Books</h4>
+        <h4 class="display-3">Books</h4>
 {#        to get data from another model (Book) where is ForeignKey to this model (Author) #}
         {% if author.book_set.all %}
             <ul>
