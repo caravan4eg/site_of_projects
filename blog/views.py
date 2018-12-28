@@ -2,6 +2,10 @@ from django.utils import timezone
 from .models import Post
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import PostForm
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
+from blog.models import *
+from django.contrib.auth.mixins import PermissionRequiredMixin
 
 
 # Create your views here.
@@ -32,3 +36,25 @@ def post_new(request):
 	else:
 		form = PostForm()
 	return render(request, 'blog/post_edit.html', {'form': form})
+
+
+# class based views instead  def post_new(request):
+class PostCreate(PermissionRequiredMixin, CreateView):
+	model = Post
+	fields = ['title', 'author', 'text']
+	success_url = reverse_lazy('blog:post_list')
+	permission_required = 'catalog.can_mark_returned'
+
+
+class PostUpdate(PermissionRequiredMixin, UpdateView):
+	model = Post
+	fields = '__all__'
+	success_url = reverse_lazy('blog:post_list')
+	permission_required = 'catalog.can_mark_returned'
+
+
+class PostDelete(PermissionRequiredMixin, UpdateView):
+	model = Post
+	fields = '__all__'
+	success_url = reverse_lazy('blog:post_list')
+	permission_required = 'catalog.can_mark_returned'

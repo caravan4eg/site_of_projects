@@ -1,7 +1,9 @@
 {% extends "catalog/base_generic.html" %}
 
 {% block content %}
-    <h1 class="display-5">Form for new author</h1>
+{#    {{ request.path }}#}
+    <h1 class="display-5">Form for new book</h1>
+    <hr>
     <form action="" method="post">
         {% csrf_token %}
         <table>

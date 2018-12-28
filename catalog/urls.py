@@ -1,6 +1,6 @@
-from django.urls import path, include
+from django.urls import path
 from . views import *
-from django.contrib.auth import urls
+# from django.contrib.auth import urls
 
 app_name = 'catalog'
 
@@ -17,4 +17,8 @@ urlpatterns = [
     path('author/create/', AuthorCreate.as_view(), name='author_create'),
     path('author/<int:pk>/update/', AuthorUpdate.as_view(), name='author_update'),
     path('author/<int:pk>/delete/', AuthorDelete.as_view(), name='author_delete'),
+
+    path('book/create/', BookCreate.as_view(), name='book_create'),
+    path('book/<int:pk>/update/', BookUpdate.as_view(), name='book_update'),
+    path('book/<int:pk>/delete/', BookDelete.as_view(), name='book_delete'),
     ]
