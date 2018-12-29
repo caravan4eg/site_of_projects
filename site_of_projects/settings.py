@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '2cvqzvyit@j)u36yjh2-ex#%a_^7yv
 # commenting for deployment DEBUG = True
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['immense-bastion-46019.herokuapp.com', '127.0.0.1']
 
 
 # Application definition

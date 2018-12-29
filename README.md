@@ -1,9 +1,2 @@
-# site_of_projects
-Blog
-Shop
-Data bases
-Authentication 
-Permission
-Class Based Views - generic CBV
-Functions Based Views
-Mixins PermissionRequiredMixin, LoginRequiredMixin
+This is project with different Django applications. 
+Site contains databases, search functionality, Django Template Language, access restriction and permission for different groups, generation based on functions and generic classes views.
