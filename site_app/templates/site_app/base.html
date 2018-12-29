@@ -41,17 +41,17 @@
                     <a class="dropdown-item" href="{% url 'blog:post_create' %}">New post</a>
                 </div>
             </li>
-
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    Shop
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{% url 'shop:home' %}">Shop </a>
-                    <a class="dropdown-item" href="{% url 'shop:login' %}">Login to shop</a>
-                </div>
-            </li>
+{##}
+{#            <li class="nav-item dropdown">#}
+{#                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"#}
+{#                   aria-haspopup="true" aria-expanded="false">#}
+{#                    Shop#}
+{#                </a>#}
+{#                <div class="dropdown-menu" aria-labelledby="navbarDropdown">#}
+{#                    <a class="dropdown-item" href="{% url 'shop:home' %}">Shop </a>#}
+{#                    <a class="dropdown-item" href="{% url 'shop:login' %}">Login to shop</a>#}
+{#                </div>#}
+{#            </li>#}
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -62,8 +62,13 @@
                     <a class="dropdown-item" href="{% url 'catalog:index' %}">LocalLibrary Site</a>
                     <a class="dropdown-item" href="{% url 'catalog:books' %}">All books</a>
                     <a class="dropdown-item" href="{% url 'catalog:authors' %}">All authors</a>
+{#                    restricted access#}
+                    <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="{% url 'catalog:my-borrowed' %}">My Borrowed</a>
                     <a class="dropdown-item" href="{% url 'catalog:user-borrowed' %}">_All Borrowed</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{% url 'catalog:author_create' %}">_Author create</a>
+                    <a class="dropdown-item" href="{% url 'catalog:book_create' %}">_Book create</a>
 
                 </div>
             </li>
@@ -75,24 +80,21 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
-                    Exercises
+                    Study Exercises
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{% url 'book_app:current_time' %}">What time is it?</a>
                     <a class="dropdown-item" href="{% url 'book_app:order' %}">Make an order</a>
                     <a class="dropdown-item" href="{% url 'book_app:display_meta' %}">What is in GET?</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{% url 'book_app:search' %}">Search</a>
+{#                    <div class="dropdown-divider"></div>#}
+{#                    <a class="dropdown-item" href="{% url 'site_app:search' %}">Search</a>#}
                 </div>
             </li>
-            <!--</li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
-            </li>-->
+
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <form class="form-inline my-2 my-lg-0" action="{% url 'site_app:search' %}" method="get">
+            <input class="form-control mr-sm-2" type="Search" name="q">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Search">Search</button>
         </form>
     </div>
 </nav>
@@ -100,12 +102,15 @@
     <div class="row">
         <div class="col-md-8">
             <div style="margin-left:20px;margin-top:20px">
-                {% block content %}
-                {% endblock %}
-                {#it should be there #}
-                {#Open the base template (/locallibrary/catalog/templates/base_generic.html)#}
-                {#and copy the following text into the sidebar block, immediately before #}
-                {#the endblock template tag.#}
+                {% block content %} Here goes content from another pages {% endblock %}
+{#            it should be there #}
+{#            Authentication block#}
+{#            because there is this path('accounts/', include('django.contrib.auth.urls'))#}
+{#            it makes us possible to use login logot here#}
+{#                  Open the base template (/locallibrary/catalog/templates/base_generic.html)#}
+{#                and copy the following text into the sidebar block, immediately before #}
+{#                the endblock template tag.#}
+                <hr>
                 <p><em>Authentication block: </em></p>
                 {% if user.is_authenticated %}
                     <li>User: {{ user.get_username }}</li>
@@ -113,7 +118,7 @@
                 {% else %}
                     <li><a href="{% url 'login' %}?next={{ request.path }}">Login</a></li>
                 {% endif %}
-{#end of Authentication block           #}
+{#              end of Authentication block           #}
             </div>
         </div>
     </div>

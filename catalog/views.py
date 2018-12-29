@@ -39,8 +39,8 @@ def index(request):
 	request.session['num_visits'] = num_visits + 1
 
 	# Added by me - study case
-	num_books_darktower = Book.objects.filter(title__icontains='dark').count()
-	num_genres_fiction = Genre.objects.filter(name__contains='fiction').count()
+	# num_books_darktower = Book.objects.filter(title__icontains='dark').count()
+	# num_genres_fiction = Genre.objects.filter(name__contains='fiction').count()
 
 	context = {
 		'num_books': num_books,
@@ -48,8 +48,8 @@ def index(request):
 		'num_instances_available': num_instances_available,
 		'num_authors': num_authors,
 		# Added by me - study case
-		'num_books_darktower': num_books_darktower,
-		'num_genres_fiction': num_genres_fiction,
+		# 'num_books_darktower': num_books_darktower,
+		# 'num_genres_fiction': num_genres_fiction,
 		'num_visits': num_visits,
 	}
 
@@ -137,7 +137,7 @@ def renew_book_librarian(request, pk):
             book_instance.save()
 
             # redirect to a new URL:
-            return HttpResponseRedirect(reverse('all-borrowed') )
+            return HttpResponseRedirect(reverse('catalog:user-borrowed'))
 
     # If this is a GET (or any other method) create the default form.
     else:

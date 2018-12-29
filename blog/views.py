@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .forms import PostForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
-from blog.models import *
+from .models import *
 from django.contrib.auth.mixins import PermissionRequiredMixin
 
 
@@ -39,11 +39,10 @@ def post_new(request):
 
 
 # class based views instead  def post_new(request):
-class PostCreate(PermissionRequiredMixin, CreateView):
+class PostCreate(CreateView):
 	model = Post
-	fields = ['title', 'author', 'text']
+	fields = '__all__'
 	success_url = reverse_lazy('blog:post_list')
-	permission_required = 'catalog.can_mark_returned'
 
 
 class PostUpdate(PermissionRequiredMixin, UpdateView):
@@ -53,7 +52,7 @@ class PostUpdate(PermissionRequiredMixin, UpdateView):
 	permission_required = 'catalog.can_mark_returned'
 
 
-class PostDelete(PermissionRequiredMixin, UpdateView):
+class PostDelete(PermissionRequiredMixin, DeleteView):
 	model = Post
 	fields = '__all__'
 	success_url = reverse_lazy('blog:post_list')

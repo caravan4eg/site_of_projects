@@ -1,0 +1,54 @@
+{% extends 'site_app/base.html' %}
+
+{% block content %}
+    <p>Your search: <strong>{{ query }}</strong></p>
+    {% if books %}
+
+        <p>We found {{ books|length }} book{{ books|pluralize }}:</p> <!-- добавляет s если много -->
+        <hr>
+        <ul>
+            {% for book in books %}
+                <li>
+
+                    <h4><a href="{{ book.get_absolute_url }}">{{ book.title }} / {{ book.author }}</a></h4>
+                    <p><em>
+                        isbn: {{ book.isbn }},
+                        Summary: {{ book.summary|truncatewords:15 }}
+                    </em></p>
+                </li>
+                {#            <h1><a href="{% url 'catalog:book-detail' pk=book.pk %}">{{ book.title }}</a></h1>#}
+                {#            <li>{{ book.title }}</li>#}
+            {% endfor %}
+        </ul>
+
+    {% else %}
+        <hr>
+        <p>We didn't find any books.</p>
+    {% endif %}
+
+{#Looking in database Post for posts#}
+    {% if posts %}
+        <p>We found {{ posts|length }} post{{ posts|pluralize }}:</p>
+        <hr>
+        <ul>
+            {% for post in posts %}
+                <div class="post">
+                    {% if post.published_date %}
+                    <div class="date">
+                        <br>
+                        {{ post.published_date }}
+                    </div>
+                    {% endif %}
+                    <li>
+                        <h4><a href="{% url 'blog:post_detail' pk=post.pk %}">{{ post.title }}</a></h4>
+                        <p>{{ post.text|linebreaksbr|safe|truncatewords:15 }}</p>
+                    </li>
+                </div>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <hr>
+        <p>We didn't find any posts.</p>
+    {% endif %}
+
+{% endblock %}

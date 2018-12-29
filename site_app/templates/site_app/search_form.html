@@ -1,0 +1,19 @@
+{% extends 'site_app/base.html' %}
+
+{% block content %}
+     <p>Your search: <strong></p>
+    {% if errors %}
+        <ul>
+            {% for error in errors %}
+                <li><p style="color:red ">{{ error }} </p></li>
+            {% endfor %}
+            <!--<p style="color:red ">Input search request no more than 20 symbols</p>-->
+        </ul>
+    {% endif %}
+
+    <form action="" method="get">
+        <input type='text' name='q'>
+        <input type="submit" value="Search">
+    </form>
+
+{% endblock %}

@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import Http404, HttpResponse
 import datetime
-from .models import Book
+from catalog.models import *
+from blog.models import *
 
 
 # Create your views here.
@@ -47,9 +48,11 @@ def display_meta(request):
 	values_meta = sorted(request.META.items())
 	path = request.path
 	cook = request.COOKIES
-	c = {'values_meta': values_meta,
-	     'path': path,
-	     'cook': cook}
+	c = {
+		'values_meta': values_meta,
+		'path': path,
+		'cook': cook,
+		}
 	# html = []
 	# for key, value in values:
 	# 	html.append('<tr><td>{0}</td><td>{1}</tr></td>'.format(key, value))
@@ -57,21 +60,3 @@ def display_meta(request):
 	# print(report)
 	return render(request, 'book_app/display_meta.html', context=c)
 
-
-def search_form(request):
-	return render(request, 'book_app/search_form.html')
-
-
-def search(request):
-	errors = []
-	if 'q' in request.GET:
-		q = request.GET['q']
-		if not q:
-			errors.append('Введите поисковый запрос')
-		elif len(q) > 20:
-			errors.append('Введите поисковый запрос менее 20 символов')  # если запрос слишком длинный
-		else:
-			books = Book.objects.filter(title__icontains=q)
-			return render(request, 'book_app/search_results.html',
-			              {'books': books, 'query': q})
-	return render(request, 'book_app/search_form.html', {'errors': errors})

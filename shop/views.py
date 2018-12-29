@@ -10,6 +10,7 @@ from hashlib import md5
 
 
 # Create your views here.
+
 def index(request):
 	if request.method == "GET":
 		user = request.user
