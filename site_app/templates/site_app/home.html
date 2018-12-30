@@ -9,7 +9,8 @@
         <br/><br/>
         And I asked myself how all of these websites work?
         If I can understand it and make something as wonderful as my son makes?
-        It was a warm rainy autumn day (2018) when I decided to learn backend programming with Python and Django from zero.
+        It was a warm rainy autumn day (2018) when I decided to learn backend programming with Python and Django from
+        zero.
 
         <br/><br/>
         I would say it's my tango with Django.
@@ -19,8 +20,18 @@
         You'll find on this site search functionality, result of interaction with
         data base, small blog and library catalog, using Django Template Language
         and something else useful but I do not know what yet ;-)
-        <p><em>At <strong>Blog's</strong> pages you can see how is it going now...</em></p>
-
+    <p><em>At <strong>Blog's</strong> pages you can see short history how is it going right now...</em></p>
+    <br/><br/>
+    <strong>About functionality</strong>
+    <p>Site has Blog, LocalLibrary and some Study exercises.
+        All posts in the Blog is getting by request from servers database.
+        It can be SQLight or PostgreSQL/MySQL. It depends from server where site is running.
+        Everyone can read and add posts.
+        At LocalLibrary you can see function and generic class based views, access restriction,
+        different permission by different group of users as result of implementing decorators and mixins.
+        If you want test behavior of users use authentication form at very bottom of page
+        Study Exercises show some techniques of templates in Django, content of GET Request
+        and others.</p>
     <hr>
     <img src="{% static 'images/TangoWithDjangoCover.jpg' %}" alt="Tango With Django" style="width:300px;height:368px;">
 {% endblock content %}

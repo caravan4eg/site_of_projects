@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91bca63c-d7c9-4da6-a036-696d4913d475" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site_of_projects/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/site_of_projects/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog/templates/catalog/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/templates/catalog/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site_app/templates/site_app/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/site_app/templates/site_app/home.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,14 +25,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/site_of_projects/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="32" column="59" selection-start-line="32" selection-start-column="59" selection-end-line="32" selection-end-column="59" />
+            <state relative-caret-position="170">
+              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
               <folding>
                 <element signature="e#309#318#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/catalog/templates/catalog/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/site_app/templates/site_app/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="30" column="29" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -117,7 +134,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/registration/password_reset_confirm.html" />
         <option value="$PROJECT_DIR$/templates/registration/password_reset_complete.html" />
         <option value="$PROJECT_DIR$/templates/registration/password_reset_form.html" />
         <option value="$PROJECT_DIR$/catalog/templates/catalog/base_generic.html" />
@@ -145,7 +161,6 @@
         <option value="$PROJECT_DIR$/blog/templates/blog/post_form.html" />
         <option value="$PROJECT_DIR$/blog/views.py" />
         <option value="$PROJECT_DIR$/shop/urls.py" />
-        <option value="$PROJECT_DIR$/catalog/templates/catalog/index.html" />
         <option value="$PROJECT_DIR$/shop/views.py" />
         <option value="$PROJECT_DIR$/catalog/views.py" />
         <option value="$PROJECT_DIR$/book_app/templates/book_app/search_results.html" />
@@ -168,6 +183,8 @@
         <option value="$PROJECT_DIR$/HISTORY.rst" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/site_of_projects/settings.py" />
+        <option value="$PROJECT_DIR$/catalog/templates/catalog/index.html" />
+        <option value="$PROJECT_DIR$/site_app/templates/site_app/home.html" />
       </list>
     </option>
   </component>
@@ -190,6 +207,42 @@
             <path>
               <item name="site_of_projects" type="b2602c69:ProjectViewProjectNode" />
               <item name="site_of_projects" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="site_of_projects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="site_of_projects" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="site_of_projects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="site_of_projects" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="site_of_projects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="site_of_projects" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="site_of_projects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="site_of_projects" type="462c0819:PsiDirectoryNode" />
+              <item name="site_app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="site_of_projects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="site_of_projects" type="462c0819:PsiDirectoryNode" />
+              <item name="site_app" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="site_of_projects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="site_of_projects" type="462c0819:PsiDirectoryNode" />
+              <item name="site_app" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="site_app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="site_of_projects" type="b2602c69:ProjectViewProjectNode" />
@@ -276,12 +329,12 @@
       <updated>1545249398832</updated>
       <workItem from="1545249404777" duration="28213000" />
       <workItem from="1545487269621" duration="129259000" />
-      <workItem from="1546158717721" duration="5879000" />
+      <workItem from="1546158717721" duration="7745000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="163351000" />
+    <option name="totallyTimeSpent" value="165217000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -346,18 +399,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/shop/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-204">
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/catalog/apps.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/catalog/templates/catalog/author_form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -676,11 +717,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/site_of_projects/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="32" column="59" selection-start-line="32" selection-start-column="59" selection-end-line="32" selection-end-column="59" />
+        <state relative-caret-position="170">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
           <folding>
             <element signature="e#309#318#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/catalog/templates/catalog/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site_app/templates/site_app/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="30" column="29" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="29" />
         </state>
       </provider>
     </entry>
