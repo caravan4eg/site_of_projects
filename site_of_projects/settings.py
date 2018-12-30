@@ -96,13 +96,17 @@ WSGI_APPLICATION = 'site_of_projects.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#    }
 }
 # added by me
-#DATABASES['default'] = dj_database_url.config()
+DATABASES['default'] = dj_database_url.config()
+# Heroku: Update database configuration from $DATABASE_URL.
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
 
 
 # added by me
@@ -171,14 +175,8 @@ the console (so you can copy the password reset link from the console).
 '''
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-# Heroku: Update database configuration from $DATABASE_URL.
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# Configure Django App for Heroku.
-import django_heroku
-django_heroku.settings(locals())
