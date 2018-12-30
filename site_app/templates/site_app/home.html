@@ -13,14 +13,13 @@
         how is it going right now...</p>
     <br/>
     <h2 class="display-5">Functionality & technologies</h2>
-    <p>Site has various sections witch are different Django applications:
+    <p>Site has various sections witch are different Django applications:</p>
     <ul>
         <li><a href="{% url 'blog:post_list' %}">Blog</a></></li>
         <li><a href="{% url 'catalog:index' %}">LocalLibrary</a></li>
         <li><a href="{% url 'book_app:display_meta' %}">Study exercises</a></li>
         <li><a href="{% url 'site_app:search' %}">Search</a></li>
     </ul>
-    </p>
     <p>All posts in the Blog are from server's database. It can be SQLight or PostgreSQL/MySQL database. It depends from
         server where site is running. Everyone can read and add posts.</p>
     <p>At LocalLibrary you can see function and generic class based views, access restriction, different permission by
