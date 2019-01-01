@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91bca63c-d7c9-4da6-a036-696d4913d475" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/catalog/templates/catalog/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/templates/catalog/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -303,12 +303,12 @@
       <updated>1545249398832</updated>
       <workItem from="1545249404777" duration="28213000" />
       <workItem from="1545487269621" duration="129259000" />
-      <workItem from="1546158717721" duration="13454000" />
+      <workItem from="1546158717721" duration="13753000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="170926000" />
+    <option name="totallyTimeSpent" value="171225000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
