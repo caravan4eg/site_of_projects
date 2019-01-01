@@ -3,18 +3,21 @@
 {% block title %}Local Library Home {% endblock %}
 {% block content %}
 
-    <h1 class="display-5">Local Library Home</h1>
-    <p>Welcome to LocalLibrary, a website developed by<em> caravan4eg with help of Mozilla Developer Network</em>!</p>
-    <p>Most of content is <em>dynamically generated from data base</em>.
-        <em>Generic class-based views</em> are implemented here too.</p>
-    There are some types of users:
-    - user/[jxe100dm - can look trough catalog of Library and see borrowed by him books
-    - librarian/[jxe100dm - can trough catalog of Library and see all borrowed books,
-    to do CRUD for books and authors
-    - developer19/[jxe100dm - can do everything
-
+    <h1 class="display-4">Local Library Home</h1>
+    <p>Welcome to LocalLibrary!</p>
+    <p>Most of content is dynamically generated from data base. At LocalLibrary pages are implemented access
+        restriction, generic class-based and functions based views, mixins and decorators. There is bunch of
+        possibilities to work with books and authors.</p>
+    <p>There are some types of users:</p>
+    <ul>
+        <li>user/user[jxe100dm - can look trough catalog of Library and see borrowed by him books;</li>
+        <li>librarian/librarian[jxe100dm - can trough catalog of Library and see all borrowed books,
+            to do CRUD for books and authors;
+        </li>
+        <li>developer19/dev[jxe100dm - can do everything;</li>
+    </ul>
     <hr>
-    <h2>Dynamic content</h2>
+    <h2 class="display-5">Dynamic content</h2>
     <p>This site interacts with data base of books witch belong to the LocalLibrary.
         At current time the LocalLibrary has the following record counts:</p>
     <ul>
@@ -22,10 +25,10 @@
         <li><strong>Copies:</strong> {{ num_instances }}</li>
         <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
         <li><strong>Authors:</strong> {{ num_authors }}</li>
-{#         Added by me - study case #}
-{#        Including:#}
-{#        <li><strong>Books about Dark Tower:</strong> {{ num_books_darktower }}</li>#}
-{#        <li><strong>Science Fiction books :</strong> {{ num_genres_fiction }}</li>#}
+        {#         Added by me - study case #}
+        {#        Including:#}
+        {#        <li><strong>Books about Dark Tower:</strong> {{ num_books_darktower }}</li>#}
+        {#        <li><strong>Science Fiction books :</strong> {{ num_genres_fiction }}</li>#}
     </ul>
     <hr>
     <p>Django stores history of visits to particular pages and sessions.
